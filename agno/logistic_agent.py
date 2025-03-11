@@ -1,7 +1,7 @@
 import re
 from itertools import permutations
 from agno.agent import Agent
-from agno.models.azure import AzureOpenAI
+from agno.models.openai import OpenAIChat
 
 
 # Sample data for shipments and distances
@@ -59,7 +59,7 @@ class RouteTool:
         return f"Optimal route: {route_plan} (Total distance: {best_distance} km)"
 # Create the agent with model, instructions, and tools
 agent = Agent(
-    model=AzureOpenAI(id="gpt-4o"),
+    model=OpenAIChat(id="gpt-4o"),
     description="You are a knowledgeable logistics assistant.",
     instructions=[
         "If the user asks about a shipment or tracking ID, use the TrackingTool.",

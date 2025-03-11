@@ -1,7 +1,7 @@
 import os
 import requests
 from agno.agent import Agent
-from agno.models.azure import AzureOpenAI
+from agno.models.openai import OpenAIChat
 
 # Define custom Oxylabs tool
 class FuelStationSearchTool:
@@ -42,7 +42,7 @@ class FuelStationSearchTool:
 
 # Initialize Agno agent
 agent = Agent(
-    model=AzureOpenAI(id="gpt-4o"),
+    model=OpenAIChat(id="gpt-4o"),
     description="An intelligent logistics assistant helping drivers find nearby services.",
     instructions=[
         "Use FuelStationSearchTool for queries about nearby fuel stations.",
